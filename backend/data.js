@@ -1,0 +1,88 @@
+import bcrypt from "bcryptjs";
+
+const data = {
+  users: [
+    {
+      name: "Himanshu",
+      email: "admin@myshop.com",
+      password: bcrypt.hashSync("1234", 8),
+      isAdmin: true,
+    },
+    {
+      name: "John Doe",
+      email: "user@myshop.com",
+      password: bcrypt.hashSync("1234", 8),
+      isAdmin: false,
+    },
+  ],
+  products: [
+    {
+      name: "Nike Slim Shirt",
+      category: "shirts",
+      image: "/images/p1.jpg",
+      price: 120,
+      countInStock: 10,
+      brand: "Nike",
+      rating: 4.5,
+      numReviews: 10,
+      description: "high quality product",
+    },
+    {
+      name: "Nike Fit Shirt",
+      category: "shirts",
+      image: "/images/p2.jpg",
+      price: 105,
+      countInStock: 20,
+      brand: "Nike",
+      rating: 3.5,
+      numReviews: 11,
+      description: "high quality product",
+    },
+    {
+      name: "Adi Slim Shirt",
+      category: "shirts",
+      image: "/images/p3.jpg",
+      price: 90,
+      countInStock: 0,
+      brand: "Adi",
+      rating: 5,
+      numReviews: 100,
+      description: "high quality product",
+    },
+    {
+      name: "Adi Fit Pants",
+      category: "pants",
+      image: "/images/p4.jpg",
+      price: 125,
+      countInStock: 15,
+      brand: "Adi",
+      rating: 3,
+      numReviews: 15,
+      description: "high quality product",
+    },
+    {
+      name: "Lacoste Free Pants",
+      category: "pants",
+      image: "/images/p5.jpg",
+      price: 80,
+      countInStock: 55,
+      brand: "Lacoste",
+      rating: 5,
+      numReviews: 20,
+      description: "high quality product",
+    },
+    {
+      name: "Nike Slim Pants",
+      category: "pants",
+      image: "/images/p6.jpg",
+      price: 110,
+      countInStock: 19,
+      brand: "Nike",
+      rating: 4,
+      numReviews: 14,
+      description: "high quality product",
+    },
+  ],
+};
+
+export default data;
