@@ -21,6 +21,9 @@ mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost/hamazon", {
 app.use("/api/users", userRouter);
 app.use("/api/products", productRouter);
 app.use("/api/orders", orderRouter);
+app.get("/api/config/paypal", (req, res) => {
+  res.send(process.env.PAYPAL_CLAIENT_ID || "sb");
+});
 
 app.get("/", (req, res) => {
   res.send("Server is ready");
