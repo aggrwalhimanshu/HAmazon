@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import userRouter from "./routers/userRouter.js";
 import productRouter from "./routers/productRouter.js";
 import orderRouter from "./routers/orderRouter.js";
+import path from "path";
 
 const enVar = dotenv;
 enVar.config();
@@ -25,9 +26,14 @@ app.get("/api/config/paypal", (req, res) => {
   res.send(process.env.PAYPAL_CLAIENT_ID || "sb");
 });
 
-app.get("/", (req, res) => {
-  res.send("Server is ready");
-});
+app.use(express.static(path.join(__dirname, "/frontend/build")));
+app.get("*", (req, res) =>
+  res.sendFile(path.join(__dirname, "/frontend/build/index.html"))
+);
+
+// app.get("/", (req, res) => {
+//   res.send("Server is ready");
+// });
 
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
