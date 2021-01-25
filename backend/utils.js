@@ -34,3 +34,11 @@ export const isAuth = (req, res, next) => {
     res.send(401).send({ message: "No token" });
   }
 };
+
+export const isAdmin = (req, res, next) => {
+  if (req.user && req.user.isAdmin) {
+    next();
+  } else {
+    res.send(401).send({ message: "Not an Admin" });
+  }
+};
