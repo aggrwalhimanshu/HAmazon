@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "cd frontend && yarn add && npm run bild",
+    "build": "cd frontend && npm install && npm run bild",
     "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
   },
   "repository": {
@@ -33,7 +33,7 @@
     "prettier": "^2.2.1"
   },
   "engines": {
-    "node": "15.5.1",
-    "npm": "7.3.0"
+    "node": "12.4.0",
+    "npm": "6.9.0"
   }
 }
